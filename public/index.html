@@ -7,11 +7,31 @@
     <title>Audio chat</title>
 </head>
 <body>
-    <h1>Hello!</h1>
-    <button id="play">Capture</button>
-    <button id="pause">Pause</button>
+
+    <div class="container">
+        <div class="content">
+            <h1>Welcome!</h1>
+            <div class="init">
+                <button>click to access chat</button>
+            </div>
+            <div class="hide controls">
+                <button id="play">Capture</button>
+                <button id="pause">Pause</button>
+            </div>
+        </div>
+    </div>
     
 </body>
 <script src="/socket.io/socket.io.js"></script>
 <script src="/public/script.js"></script>
+<script>
+    let btn_init = document.querySelector('.init')
+    let controls = document.querySelector('.controls')
+
+    btn_init.addEventListener('click', () =>{
+        btn_init.classList.add('hide')
+        controls.classList.remove('hide')
+    })
+
+</script>
 </html>
